@@ -1,0 +1,14 @@
+def gcd(a, b):
+    "greatest common divisor (Euclidean algorithm)"
+
+    while b:
+		c = a % b
+		a = b; b = c
+
+    return a
+
+
+def lcm(a,b):
+    "Least common multiple"
+
+    return a * b / gcd(a, b)
