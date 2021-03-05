@@ -1,0 +1,22 @@
+def primeNumber(n):
+    "Sieve of Eratosthenes" 
+
+    arr = [2] + list(range(3, n + 1, 2))
+
+    i = 1
+    while i < len(arr):
+        j = i + 1
+
+        while j < len(arr):
+            if arr[j] % arr[i] == 0:
+                arr.pop(j)
+            else:
+                j += 1
+        
+        i += 1
+    
+    return arr
+
+
+if __name__ == "__main__":
+    print(primeNumber(1000))
