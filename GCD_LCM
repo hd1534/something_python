@@ -2,8 +2,8 @@ def gcd(a, b):
     "greatest common divisor (Euclidean algorithm)"
 
     while b:
-		c = a % b
-		a = b; b = c
+        c = a % b
+        a = b; b = c
 
     return a
 
