@@ -1,3 +1,6 @@
+from collections import deque
+
+
 def primeNumber(n):
     "Sieve of Eratosthenes" 
 
@@ -16,6 +19,23 @@ def primeNumber(n):
         i += 1
     
     return arr
+
+def primeNumber2(n):
+    "Sieve of Eratosthenes" 
+    
+    q = deque([2]+list(range(3, n+1, 2)))
+
+    i = 0
+    while i < len(q):
+        j = i + 1
+        while j < len(q):
+            if q[j] % q[i] == 0:
+                del q[j]
+            else:
+                j += 1
+        i += 1
+
+    return q
 
 
 if __name__ == "__main__":
